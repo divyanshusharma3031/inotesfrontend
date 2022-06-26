@@ -1,0 +1,13 @@
+.additional
+{
+    background-color: #f7c08a !important
+}
+.choose
+{
+    color: #333!important;
+    font-weight: 600;
+}
+.translate
+{
+    transform: translate(15px, -2px);
+}

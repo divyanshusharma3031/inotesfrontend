@@ -1,0 +1,18 @@
+.hadd
+{
+    color:#f7c08a;
+    text-align: center;
+}
+.butn
+{
+    padding:10px 20px;
+    border-radius: 8px;
+    background-color: #f7c08a;
+    color: black;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+.butn:hover
+{
+    transform: scale(1.05);
+}
