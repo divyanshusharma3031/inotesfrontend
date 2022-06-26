@@ -3,7 +3,7 @@ import { useState } from "react";
 import Notecontext from "./NoteContext";
 import { useEffect } from "react";
 const Notestate = (props) => {
-  const host = "https://backendinotes.herokuapp.com/";
+  const host = "https://backendinotes.herokuapp.com";
   const note = [];
   const getnote = async () => {
     const response = await fetch(`${host}/notes/fetchallnotes`, {
