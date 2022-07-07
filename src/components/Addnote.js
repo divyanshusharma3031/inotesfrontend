@@ -3,7 +3,7 @@ import { useContext } from "react";
 import NoteContext from "../Context/Notes/NoteContext";
 import { useState } from "react";
 import "./AddNote.css";
-function Addnote() {
+function Addnote(props) {
   const { Addnote } = useContext(NoteContext);
   const [note, setnote] = useState({ title: "", description: "", tag: "" });
   const handlechange = (e) => {
@@ -11,8 +11,16 @@ function Addnote() {
   };
   const handleclick = (e) => {
     e.preventDefault();
-    Addnote(note);
-    setnote({ title: "", description: "", tag: "" });
+    if (note.title.length < 3 || note.description.length < 8) {
+      props.showalert(
+        "Title and description should be atleast 3 and 8 char",
+        "danger"
+      );
+    } else {
+      Addnote(note);
+      setnote({ title: "", description: "", tag: "" });
+      props.showalert("Note added","success");
+    }
   };
   return (
     <div className="container my-5">
@@ -58,7 +66,7 @@ function Addnote() {
             value={note.tag}
           />
         </div>
-        <button disabled={note.title.length<5 || note.description.length<5} type="submit" className="butn hadd" onClick={handleclick}>
+        <button type="submit" className="butn hadd" onClick={handleclick}>
           Add Note
         </button>
       </form>
