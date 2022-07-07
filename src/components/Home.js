@@ -9,13 +9,13 @@ function Home(props) {
       <div className="hero">
         <div className="content">
           <h1>Solution To All Your Note Solving Problems</h1>
-          <p>We provide world class financial assistance</p>
+          <p>We provide world class Note Saving assistance</p>
           <Link to="/about" class="btn">
             <i class="fas fa-chevron-right"></i> Read More
           </Link>
         </div>
       </div>
-      <Addnote />
+      <Addnote showalert={props.showalert}/>
       <div className="container">
         <h1 className="my-5 comlor">Your Notes</h1>
         <Notes showalert={props.showalert} />
